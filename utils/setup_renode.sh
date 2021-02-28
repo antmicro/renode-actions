@@ -1,6 +1,10 @@
 #!/bin/sh
 
-set -e
+set -e -v
+
+echo "SETUP RENODE"
+echo $GITHUB_ENV
+
 if ! __tests__/check_renode_install.sh;
 then
     RENODE_DIR=$(mktemp -d)
@@ -12,3 +16,5 @@ then
     fi
     tar -xzf renode-$RENODE_VERSION.linux-portable.tar.gz -C $RENODE_DIR --strip 1
 fi
+
+echo $GITHUB_ENV
