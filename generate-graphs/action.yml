@@ -1,0 +1,18 @@
+name: 'Generate graphs'
+description: 'This action generates graphs from the Renode dump file'
+inputs:
+  renode-version:
+    description: 'Renode version'
+    required: true
+    default: 'latest'
+  dump-file:
+    description: 'Path to the Renode dump file'
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - run: $GITHUB_ACTION_PATH/generate_graphs.sh
+      shell: bash
+      env:
+        RENODE_VERSION: ${{ inputs.renode-version }}
+        DUMP_FILE: ${{ inputs.dump-file }}

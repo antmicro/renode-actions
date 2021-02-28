@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -e -a
+set -e
 if ! __tests__/check_renode_install.sh;
 then
     RENODE_DIR=$(mktemp -d)

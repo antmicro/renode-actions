@@ -1,0 +1,16 @@
+name: Metrics action
+ 
+on: [push,pull_request,workflow_dispatch]
+
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./generate-graphs
+        with:
+          dump-file: __tests__/renode.dump
+      
+      - name: Should generate graphs
+        run: if [ -f "*.png ]; then echo "Graphs found"; else exit 1; fi
+        
