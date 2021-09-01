@@ -1,7 +1,7 @@
 # renode-actions
 Copyright (c) 2021 [Antmicro](https://www.antmicro.com)
 
-This action is now obsolete. Please use [Renode Test Action](https://github.com/antmicro/renode-test-action].
+This action is now obsolete. Please use [Renode Test Action](https://github.com/antmicro/renode-test-action).
 
 This repository contains a Renode GitHub action for testing software in the Renode environment.
 
